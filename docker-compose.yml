@@ -12,7 +12,7 @@ services:
       - TZ=Europe/Berlin
       - WATCHTOWER_LIFECYCLE_HOOKS=1 # Enable pre/post-update scripts
       - WATCHTOWER_NOTIFICATIONS=shoutrrr
-      - WATCHTOWER_NOTIFICATION_URL=telegram://$5105056247:AAE1xCksbZsltR9lK6hm2HO8gnOSOyArzzU@telegram/?channels=$CHAT_ID
+      - WATCHTOWER_NOTIFICATION_URL=telegram://$5105056247:AAE1xCksbZsltR9lK6hm2HO8gnOSOyArzzU@telegram/?channels=$stereobird
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
   oeb-nuxt-prod:
