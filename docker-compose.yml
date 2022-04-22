@@ -1,31 +1,59 @@
 services:
+  watchtower:
+    image: containrrr/watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_LABEL_ENABLE=true
+      - WATCHTOWER_INCLUDE_RESTARTING=true
+      - TZ=Europe/Berlin
+      - WATCHTOWER_LIFECYCLE_HOOKS=1 # Enable pre/post-update scripts
+      - WATCHTOWER_NOTIFICATIONS=shoutrrr
+      - WATCHTOWER_NOTIFICATION_URL=telegram://$5105056247:AAE1xCksbZsltR9lK6hm2HO8gnOSOyArzzU@telegram/?channels=$CHAT_ID
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
   oeb-nuxt-prod:
     image: dbruechner/openebench-nuxt-prod
     restart: always
     ports:
       - 4000:80
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
   oeb-nuxt-dev:
     image: dbruechner/openebench-nuxt-dev
     restart: always
     ports:
       - 4001:80
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
   oeb-nuxt-dev2:
     image: dbruechner/openebench-nuxt-dev2
     restart: always
     ports:
       - 4002:80
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
   oeb-legacy-prod:
     image: dbruechner/openebench-frontend-prod
     restart: always
     ports:
       - 4200:80
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
   oeb-legacy-dev:
     image: dbruechner/openebench-frontend-dev
     restart: always
     ports:
       - 4201:80
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
   oeb-legacy-dev2:
     image: dbruechner/openebench-frontend-dev-2
     restart: always
     ports:
       - 4202:80
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
