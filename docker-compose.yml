@@ -34,6 +34,13 @@ services:
       - 4002:80
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+  oeb-github-docs-frontend:
+    image: dbruechner/oeb-github-docs-frontend
+    restart: always
+    ports:
+      - 4100:80
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
   oeb-legacy-prod:
     image: dbruechner/openebench-frontend-prod
     restart: always
