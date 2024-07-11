@@ -14,14 +14,14 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
   oeb-nuxt-prod:
-    image: openebench/openebench-nuxt-prod
+    image: openebench/openebench-nuxt-prod:master
     restart: always
     ports:
       - 4000:80
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
   oeb-nuxt-dev:
-    image: openebench/openebench-nuxt-dev
+    image: openebench/openebench-nuxt-dev:oeb-widgets-dev
     restart: always
     ports:
       - 4001:80
