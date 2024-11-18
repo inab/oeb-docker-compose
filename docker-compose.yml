@@ -62,3 +62,10 @@ services:
       - 4202:80
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+  oeb-nuxt-test2:
+    image: ghcr.io/inab/openebench-nuxt-v3:test2
+    restart: always
+    ports:
+      - 4203:80
+    labels:
+      - com.centurylinklabs.watchtower.enable: "true"
