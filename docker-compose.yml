@@ -38,7 +38,7 @@ services:
     image: ghcr.io/inab/openebench-nuxt-v3:test2
     restart: always
     ports:
-      - 4003:80
+      - 4003:3000
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
   oeb-github-docs-frontend:
