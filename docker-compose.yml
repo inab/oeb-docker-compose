@@ -21,6 +21,13 @@ services:
       - 4000:80
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+  oeb-nuxt-preprod:
+    image: ghcr.io/inab/openebench-nuxt-preprod:latest
+    restart: always
+    ports:
+      - 4004:80
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
   oeb-nuxt-dev:
     image: openebench/openebench-nuxt-dev:oeb-widgets-dev
     restart: always
