@@ -49,6 +49,20 @@ services:
       - 4003:3000
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+  oeb-nuxt-preprod-v3:
+    image: ghcr.io/inab/openebench-nuxt-v3:preprod
+    restart: always
+    ports:
+      - 4005:3000
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+  oeb-nuxt-sandbox-v3:
+    image: ghcr.io/inab/openebench-nuxt-v3:sandbox
+    restart: always
+    ports:
+      - 4006:3000
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"    
   oeb-github-docs-frontend:
     image: openebench/oeb-github-docs-frontend
     restart: always
